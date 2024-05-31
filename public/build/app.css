@@ -1,0 +1,35 @@
+/* style.css */
+*{
+    color: #e6e6e6;
+    background-color: #23272a;
+    font-family: 'Permanent Marker', cursive;
+  }
+  
+  .green{
+    color: #50F609;
+  }
+  
+  .purple{
+    color: #9C09F6;
+  }
+
+
+.logo {
+  vertical-align: middle;
+  height: 60px; /* Adjusted height for better alignment */
+  margin: 10px 20px; /* Adds some space around the logo */
+}
+.center-slogan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  font-family: 'Lato', sans-serif;
+  color: #555; /* Dark grey for better readability */
+}
+.w3-bar .w3-button {
+  padding: 16px 20px; /* Larger padding for easier click */
+}
+footer{
+  margin-top: auto;
+}

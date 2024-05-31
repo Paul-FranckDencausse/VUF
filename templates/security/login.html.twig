@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<br>
+<br>
+<br>
+<br>
+<div class="w3-container w3-margin-top">
+    {% if error %}
+        <div class="w3-panel w3-red">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="w3-panel ">
+            Vous êtes connectés en tant que :{{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}" class="w3-button purple">Déconnexion</a>
+        </div>
+    {% endif %}
+
+    <div class="w3-display-middle w3-padding-32 w3-card-4" style="max-width: 600px;">
+        <form method="post" class="w3-container">
+            <h2 class="w3-center green">Connexion</h2>
+
+            <div class="w3-section">
+                <label for="inputEmail" class="w3-label purple">Email</label>
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="w3-input w3-border" autocomplete="email" required autofocus>
+            </div>
+            
+            <div class="w3-section">
+                <label for="inputPassword" class="w3-label purple">Mot de passe</label>
+                <input type="password" name="password" id="inputPassword" class="w3-input w3-border" autocomplete="current-password" required>
+            </div>
+
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+            <button class="w3-button green w3-block w3-section" type="submit">Envoyer</button>
+            <a href="{{ path('app_register') }}" class="w3-button purple w3-block w3-section">Pas encore inscrit?</a>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

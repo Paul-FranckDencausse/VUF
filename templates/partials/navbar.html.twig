@@ -1,0 +1,58 @@
+
+<body>
+ <body>
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-card">
+            <!-- Left-aligned menu for large screens -->
+            <div class="w3-hide-small w3-left">
+                <a href="{{ path('app_home') }}" class="w3-bar-item w3-button">Accueil</a>
+                <a href="{{ path('app_catwalks') }}" class="w3-bar-item w3-button">Défilés</a>
+                <a href="{{ path('app_team') }}" class="w3-bar-item w3-button">Equipe</a>
+                <a href="{{ path('app_contact') }}" class="w3-bar-item w3-button">Contact</a>
+            </div>
+
+            <!-- Hamburger menu for small screens -->
+            <div class="w3-dropdown-hover w3-hide-large w3-hide-medium w3-left">
+                <button class="w3-button" title="Plus"><i class="fa fa-bars"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="{{ path('app_home') }}" class="w3-bar-item w3-button">Accueil</a>
+                    <a href="{{ path('app_catwalks') }}" class="w3-bar-item w3-button">Défilés</a>
+                    <a href="{{ path('app_team') }}" class="w3-bar-item w3-button">Equipe</a>
+                    <a href="{{ path('app_contact') }}" class="w3-bar-item w3-button">Contact</a>
+                </div>
+            </div>
+
+            <!-- Centered slogan and logo -->
+            <div class="w3-bar-item center-slogan">
+                <img src="{{ asset('build/images/logo_vert.png') }}" alt="logo" class="logo">
+                <span>Dessiné par l'IA, porté avec audace.</span>
+            </div>
+
+            <!-- Right-aligned login icon -->
+            <a href="{{ path('app_login') }}" class="w3-bar-item w3-button w3-right">
+                <i class="fa fa-key green"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Small screen navbar (optional if you want a different layout for small screens) -->
+    <div id="navDemo" class="w3-bar-block w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+        <a href="{{ path('app_home') }}" class="w3-bar-item w3-button" onclick="myFunction()">Accueil</a>
+        <a href="{{ path('app_catwalks') }}" class="w3-bar-item w3-button" onclick="myFunction()">Défilés</a>
+        <a href="{{ path('app_team') }}" class="w3-bar-item w3-button" onclick="myFunction()">Equipe</a>
+        <a href="{{ path('app_contact') }}" class="w3-bar-item w3-button" onclick="myFunction()">Contact</a>
+    </div>
+    <script>
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+

@@ -1,3 +1,51 @@
-body {
-    background-color: skyblue;
+/* style.css */
+*{
+    color: #e6e6e6;
+    background-color: #23272a;
+    font-family: 'Permanent Marker', cursive;
+  }
+  
+  .green{
+    color: #50F609;
+  }
+  .vert{
+    background-color: #50F609;
+  }
+  
+  .purple{
+    color: #9C09F6;
+  }
+  .violet{
+    background-color: #9C09F6;
+  }
+  .footer-column {
+ 
+    padding: 20px;
+}
+.w3-hover-opacity.green:hover {
+    opacity: 0.6;
+    color: green;
+}
+.social-icons {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+.social-icons i {
+    font-size: 24px;
+}
+footer {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  padding: 0;
+}
+/* styles.css */
+a {
+  text-decoration: none; /* Enlève le soulignement */
+}
+
+footer a {
+  text-decoration: none;
 }

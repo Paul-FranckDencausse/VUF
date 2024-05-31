@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product index{% endblock %}
+
+{% block body %}
+<br>
+<br>
+<br>
+<br>
+    <h1 class="w3-center green">Index des produits</h1>
+
+    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+        <thead>
+            <tr class="w3-blue">
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>
+                    <a href="{{ path('app_product_show', {'id': product.id}) }}" class="w3-button green">Montrer</a>
+                    <a href="{{ path('app_product_edit', {'id': product.id}) }}" class="w3-button purple">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4" class="w3-center">No records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_product_new') }}" class="w3-button green">Create new</a>
+{% endblock %}

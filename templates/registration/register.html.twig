@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+<br>
+<br>
+<br>
+<br>
+    <div class="w3-display-middle w3-container w3-margin-top custom-form-container">
+        <h1 class="green w3-center">Inscription</h1>
+        {{ form_errors(registrationForm) }}
+
+        {{ form_start(registrationForm, {'attr': {'class': 'w3-container'}}) }}
+            <div class="w3-section">
+                {{ form_row(registrationForm.email, {'attr': {'class': 'w3-input w3-border'}, 'label_attr': {'class': 'w3-label purple'}}) }}
+            </div>
+            <div class="w3-section">
+                {{ form_row(registrationForm.plainPassword, {
+                    'label': 'Mot de passe',
+                    'attr': {'class': 'w3-input w3-border'},
+                    'label_attr': {'class': 'w3-label purple'}
+                }) }}
+            </div>
+            <div class="w3-section">
+                {{ form_row(registrationForm.agreeTerms, {'attr': {'class': 'w3-check'}, 'label_attr': {'class': 'w3-validate'}}) }}
+            </div>
+            <button type="submit" class="w3-button green vert w3-block">Envoyer</button>
+        {{ form_end(registrationForm) }}
+    </div>
+    
+{% endblock %}

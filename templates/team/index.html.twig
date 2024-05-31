@@ -1,0 +1,57 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Home - Virtual Urban Flow{% endblock %}
+
+{% block body %}
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+<br>
+<br>
+<br>
+    <h2 class="w3-wide green">VIRTUAL URBAN FLOW</h2>
+    <p class="w3-opacity purple">Dessiné par l'IA, porté avec audace</p>
+    <p class="w3-justify">Bienvenue sur le site de Virtual Urban Flow, une entreprise innovante qui révolutionne le monde de la mode streetwear en utilisant l'IA générative pour créer des défilés de mode uniques et avant-gardistes. Notre équipe dynamique et passionnée est composée de Solène, Emma, Paul-Franck, Lydie, et Marième, qui travaillent ensemble pour repousser les limites de la créativité et de l'innovation. </p>
+   <img src="{{ asset('build/images/group.jpeg') }}" class="w3-round w3-margin-bottom" alt="groupe" style="width:60%">
+    <div class="w3-row w3-padding-32">
+        <div class="w3-third">
+            <p>Solenne</p>
+            <p><bold>Directrice générale</bold></p>
+            <img src="{{ asset('build/images/solenne.jpeg') }}" class="w3-round w3-margin-bottom" alt="Solenne" style="width:60%">
+            <p>Elle a des idées qui défilent plus vite qu'un podium de fashion week</p>
+        </div>
+        <div class="w3-third">
+            <p>Emma</p>
+            <p><bold>Brand designer</bold></p>
+            <img src="{{ asset('build/images/emma.jpeg') }}" class="w3-round w3-margin-bottom" alt="Emma" style="width:60%">
+            <p>Tellement créative qu'elle peut transformer une serviette papier en un chef d'oeuvre de streetwear. Tout en sirotant son café!</p>
+        </div>
+            
+        <div class="w3-third">
+            <p>Paul-Franck</p>
+            <p><bold>Développeur</bold></p>
+            <img src="{{ asset('build/images/paulfranck.jpg') }}" class="w3-round" alt="Paul-Franck" style="width:60%">
+            <p>Pas un jour sans une ligne de code..... même pour Noël!</p>
+        </div>
+    </div>
+    <div class="w3-row w3-padding-32">
+    <div class="w3-third">
+            <p>Lydie</p>
+            <p><bold>Experte stratégie marketing</bold></p>
+          <img src="{{ asset('build/images/lydie.jpg') }}" class="w3-round" alt="Lydie" style="width:60%">
+          <p>Si performante qu'elle peut optimiser une campagne publicitaire et doubler les conversions seulement avec son clavier et en prennant des notes!</p>
+        </div>
+         <div class="w3-third">
+            <p>Marième</p>
+            <p><bold>Social media manager</bold></p>
+          <img src="{{ asset('build/images/m.jpg') }}" class="w3-round" alt="Marième" style="width:60%">
+          <p>Tellement efficace qu'elle peut faire exploser les likes et les followers rien qu'en scrollant son feed!</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Insert your JavaScript code here
+</script>
+{% endblock %}

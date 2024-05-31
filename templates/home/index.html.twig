@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home - Virtual Urban Flow{% endblock %}
+
+{% block navbar %}
+    {% include 'partials/navbar.html.twig' %}
+{% endblock %}
+
+{% block body %}
+
+      <h1 class="green">Bienvenue sur le site de Virtual Urban Flow!</h1>4
+    <div class="w3-content" style="max-width:2000px;margin-top:46px">
+        <!-- Content and slides go here -->
+        <!-- Dynamic slide show -->
+  
+        {% include 'partials/slideshow.html.twig' %}
+</div>
+<h2 class="green w3-center">Il nous ont fait confiance:</h2>
+<div class="w3-row-padding w3-grayscale">
+    <div class="w3-col s3">
+        <img src="{{ asset('build/images/triangle.jpg') }}" alt="Logo 1" style="width:100%">
+        <p>Triangle</p>
+    </div>
+    <div class="w3-col s3">
+        <img src="{{ asset('build/images/sadida.jpg') }}" alt="Logo 2" style="width:100%">
+        <p>Sadida</p>
+    </div>
+    <div class="w3-col s3">
+        <img src="{{ asset('build/images/cougar.jpg') }}" alt="Logo 3" style="width:100%">
+        <p>Cougar</p>
+    </div>
+    <div class="w3-col s3">
+        <img src="{{ asset('build/images/pallas.jpg') }}" alt="Logo 4" style="width:100%">
+        <p>Pallas</p>
+    </div>
+</div>
+
+    <script src="{{ asset('build/main.js') }}"></script>
+{% endblock %}
+
