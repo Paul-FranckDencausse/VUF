@@ -1,9 +1,10 @@
 /* style.css */
 *{
     color: #e6e6e6;
-    background-color: #23272a;
+    background-color: #2c2f33 ;
     font-family: 'Permanent Marker', cursive;
   }
+  
   
   .green{
     color: #50F609;
@@ -40,6 +41,7 @@ footer {
   list-style-type: none;
   justify-content: space-around;
   padding: 0;
+
 }
 /* styles.css */
 a {

@@ -18,7 +18,7 @@ class ContactController extends AbstractController
         // Définition des variables nécessaires pour la vue
         $location = 'Bordeaux';
         $phone = '0643538715';
-        $email = 'dencaussepaulfranck@hotmail.com';
+        $email = 'paul1903@live.fr';
 
         return $this->render('contact/index.html.twig', [
             'controller_name' => 'ContactController',
@@ -40,7 +40,7 @@ class ContactController extends AbstractController
             $entityManager->flush();
 
             $this->addFlash('success', 'Your contact request has been sent.');
-            return $this->redirectToRoute('app_contact');  // Corrigé pour pointer vers la route 'app_contact'.
+            return $this->redirectToRoute('app_contact'); // Corrigé pour pointer vers la route 'app_contact'.
         }
 
         return $this->render('contact/new.html.twig', [

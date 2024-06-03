@@ -1,58 +1,24 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %} 
 
-{% block title %}COntact{% endblock %}
+{% block title %}Contact{% endblock %} 
 
-{% block body %}
-<br>
-<br>
-<br>
-<br>
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
-    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
-        <h2 class="w3-wide green w3-center">CONTACT</h2>
-        <p class="w3-opacity purple w3-center">N'hésitez pas!</p>
-        <div class="w3-row w3-padding-32">
-           
-              <div class="w3-col m6 w3-large w3-margin-bottom">
-    <a href="https://www.google.com/maps/search/?api=1&query={{ location|url_encode }}"><i class="fa fa-map-marker green" style="width:30px"></i> {{ location|default('Your Location') }}</a><br>
-    <a href="tel:{{ phone }}"><i class="fa fa-phone green" style="width:30ml0px"></i> {{ phone|default('+0000000000') }}</a><br>
-    <a href="mailto:{{ email }}"><i class="fa fa-envelope green" style="width:30px"></i> {{ email|default('info@example.com') }}</a><br>
-</div>
+{% block body %} 
 
-         
-<div class="w3-col m6">
-    <form id="contactForm" onsubmit="return prepareMailoLink();" action="javascript:void(0);">
-        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-            <div class="w3-half">
-                <input class="w3-input w3-border" type="text" placeholder="Sujet" required name="subject" id="subject">
-            </div>
-            <div class="w3-half">
-                <input class="w3-input w3-border" type="text" placeholder="Email" required name="email" id="email">
-            </div>
-        </div>
-        <textarea class="w3-input w3-border" placeholder="Votre message" required name="message" id="message"></textarea>
-        <button class="w3-button w3-section w3-right" type="submit">ENVOYER</button>
-    </form>
-</div>
 
-        </div>
-    </div>
-</div>
-<script>
-function prepareMailoLink() {
-    var subject = document.getElementById('subject').value;  // Renommé de 'name' à 'subject'
-    var email = document.getElementById('email').value;
-    var message = document.getElementById('message').value;
+    <div class="w3-content w3-container w3-card w3-display-middle" style="max-width:2000px;margin-top:46px"> 
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact"> 
+            <h2 class="w3-wide green w3-center">CONTACT</h2> 
+            <p class="w3-opacity purple w3-center">N'hésitez pas!</p> 
 
-    // Construction de l'URL mailto
-    var mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+            <div class="w3-row w3-padding-32"> 
+                <div class="w3-col m6 w3-large w3-margin-bottom"> 
+                    <a href="https://www.google.com/maps/search/?api=1&query={{ location|url_encode }}"><i class="fa fa-map-marker green" style="width:30px"></i> {{ location|default('Your Location') }}</a><br> 
+                    <a href="tel:{{ phone }}"><i class="fa fa-phone green" style="width:30ml0px"></i> {{ phone|default('+0000000000') }}</a><br> 
+                    <a href="mailto:{{ email }}"><i class="fa fa-envelope green" style="width:30px"></i> {{ email|default('info@example.com') }}</a><br> 
+                </div> 
 
-    // Redirection vers l'URL mailto
-    window.location.href = mailtoLink;
+            </div> 
+        </div> 
+    </div> 
 
-    // Return false to prevent normal form submission
-    return false;
-}
-</script>
-
-{% endblock %}
+{% endblock %} 
