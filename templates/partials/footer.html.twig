@@ -1,33 +1,18 @@
-<style>
-        a{
-                text-decoration:none;
-                
-        }
-        *{
-                background-color:#23272a ;
-        }
-</style>
-<footer class="w3-container w3-padding-64 w3-bottom  ">
-
-         <a href="{{ path('app_team')  }}" class="w3-left">A propos de nous</a>
-        <br>
-       <a href="{{ path('app_rgpd')  }}" class="w3-left"> RGPD</a>
-
-        
-        <div class="w3-center">
-        
-        <a href="https://www.instagram.com/"><i class="fa fa-instagram  w3-hover-opacity green"></i></a>
-        <a href="https://accounts.snapchat.com/accounts/v2/login"><i class="fa fa-snapchat  w3-hover-opacity green"></i></a>
+<footer class="w3-container w3-padding-16 w3-dark-gray">
+    <!-- Mentions légales sur la gauche -->
+    <div class="w3-third w3-container">
+        <a href="{{ path('app_legal') }}" class="w3-button w3-left w3-text-light-grey">Mentions légales</a>
+    </div>
     
-        <a href="https://x.com/"> <i class="fa-brands fa-x-twitter  w3-hover-opacity green">X</i></a>
-      
-        <BR>
-        <a href="{{ path('app_cgu')  }}" >CGU</a>
-        </div>
-        
-        
-        <a  href="{{ path('app_services')  }}" class="w3-right">Nos services</a>
-        <br>
-        <a  href="{{ path('app_cgv')  }}" class="w3-right">CGV</a> 
-
+    <!-- Icônes des réseaux sociaux au centre -->
+    <div class="w3-third w3-container  w3-center">
+        <a href="https://www.instagram.com/" class="w3-text-light-grey w3-large w3-margin-right"><i class="fa fa-instagram green w3-hover-opacity"></i></a>
+        <a href="https://accounts.snapchat.com/accounts/v2/login" class="w3-text-light-grey w3-large w3-margin-right"><i class="fa fa-snapchat green w3-hover-opacity"></i></a>
+        <a href="https://x.com/" class="w3-text-light-grey w3-button w3-large w3-margin-right"><i class="  green w3-hover-opacity">X</i></a>
+    </div>
+    
+    <!-- Lien vers la page Nos services sur la droite -->
+    <div class="w3-third w3-container">
+        <a href="{{ path('app_services') }}" class="w3-button w3-right w3-text-light-grey">Nos services</a>
+    </div>
 </footer>

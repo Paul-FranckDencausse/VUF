@@ -1,7 +1,7 @@
 <?php
-
+//titrage
 namespace App\Controller;
-
+//import-exports
 use App\Entity\Product;
 use App\Form\ProductType;
 use App\Repository\ProductRepository;
@@ -10,19 +10,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-
-#[Route('/product')]
+// route par annotations
+#[Route('/admin/product')]
 class ProductController extends AbstractController
-{
+{//read all seulement pour les admin
     #[Route('/', name: 'app_product_index', methods: ['GET'])]
     public function index(ProductRepository $productRepository): Response
     {
+        
         return $this->render('product/index.html.twig', [
             'products' => $productRepository->findAll(),
         ]);
     }
-
-   #[Route('/new', name: 'app_product_new', methods: ['GET', 'POST'])]
+//create 
+   #[Route('/admin/new', name: 'app_product_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $product = new Product();
@@ -53,16 +54,16 @@ class ProductController extends AbstractController
         ]);
     }
 
-
-    #[Route('/{id}', name: 'app_product_show', methods: ['GET'])]
+//read one 
+    #[Route('/admin/{id}', name: 'app_product_show', methods: ['GET'])]
     public function show(Product $product): Response
     {
         return $this->render('product/show.html.twig', [
             'product' => $product,
         ]);
     }
-
-    #[Route('/{id}/edit', name: 'app_product_edit', methods: ['GET', 'POST'])]
+//update
+    #[Route('/admin/{id}/edit', name: 'app_product_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Product $product, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(ProductType::class, $product);
@@ -79,19 +80,20 @@ class ProductController extends AbstractController
             'form' => $form,
         ]);
     }
-    #[Route('/{id}', name: 'app_product_delete', methods: ['POST'])]
+//delete
+    #[Route('/admin/{id}', name: 'app_product_delete', methods: ['POST'])]
     public function deleteProduct($id, Request $request, EntityManagerInterface $entityManager): Response
     {
-        // Fetch the product from the database using its ID
+        // récupère le produit de la BdD avec son ID
         $product = $entityManager->getRepository(Product::class)->find($id);
     
-        // Ensure the product exists
+        // vérifie si le produit existe
         if ($product) {
             $entityManager->remove($product);
             $entityManager->flush();
         }
     
-        // Redirect to the product index page
+        //redirige vers l'index
         return $this->redirectToRoute('app_product_index', [], Response::HTTP_SEE_OTHER);
     }
 }    

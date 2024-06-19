@@ -1,24 +1,31 @@
-{% extends 'base.html.twig' %} 
+{% extends 'base.html.twig' %}
 
-{% block title %}Contact{% endblock %} 
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{% endblock %}
 
-{% block body %} 
-
-
-    <div class="w3-content w3-container w3-card w3-display-middle" style="max-width:2000px;margin-top:46px"> 
-        <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact"> 
-            <h2 class="w3-wide green w3-center">CONTACT</h2> 
-            <p class="w3-opacity purple w3-center">N'hésitez pas!</p> 
-
-            <div class="w3-row w3-padding-32"> 
-                <div class="w3-col m6 w3-large w3-margin-bottom"> 
-                    <a href="https://www.google.com/maps/search/?api=1&query={{ location|url_encode }}"><i class="fa fa-map-marker green" style="width:30px"></i> {{ location|default('Your Location') }}</a><br> 
-                    <a href="tel:{{ phone }}"><i class="fa fa-phone green" style="width:30ml0px"></i> {{ phone|default('+0000000000') }}</a><br> 
-                    <a href="mailto:{{ email }}"><i class="fa fa-envelope green" style="width:30px"></i> {{ email|default('info@example.com') }}</a><br> 
-                </div> 
-
-            </div> 
-        </div> 
-    </div> 
-
-{% endblock %} 
+{% block body %}
+    <div class="w3-container w3-margin-top">
+        <h2>Formulaire de contact</h2>
+        {{ form_start(form) }}
+        <div class="w3-row-padding">
+            <div class="w3-col m6">
+                {{ form_row(form.brand) }}
+            </div>
+            <div class="w3-col m6">
+                {{ form_row(form.website) }}
+            </div>
+        </div>
+        {{ form_row(form.socialMedia) }}
+        {{ form_row(form.collectionDescription) }}
+        {{ form_row(form.desiredDates) }}
+        {{ form_row(form.concept) }}
+        {{ form_row(form.outfitCount) }}
+        {{ form_row(form.technicalRequirements) }}
+        {{ form_row(form.budget) }}
+        {{ form_row(form.additionalInformation) }}
+        {{ form_row(form.consent) }}
+        <button class="w3-btn w3-green" type="submit">Envoyer</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

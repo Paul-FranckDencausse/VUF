@@ -31,4 +31,17 @@ window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+
+    // JavaScript pour contrôler le modal des cookies
+function acceptCookies() {
+    document.getElementById('cookieConsentModal').style.display='none';
+    localStorage.setItem('cookiesAccepted', 'true');
+}
+
+window.onload = function() {
+    if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookieConsentModal').style.display='block';
+    }
+}
+
 }

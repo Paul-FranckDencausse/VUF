@@ -3,10 +3,7 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<br>
-<br>
-<br>
-<br>
+
 <div class="w3-container w3-margin-top">
     {% if error %}
         <div class="w3-panel w3-red">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -31,6 +28,10 @@
                 <label for="inputPassword" class="w3-label purple">Mot de passe</label>
                 <input type="password" name="password" id="inputPassword" class="w3-input w3-border" autocomplete="current-password" required>
             </div>
+             
+             {% if is_granted('ROLE_ADMIN') %}
+             <input type="hidden" name="_target_path" value="{{ path('app_users')}}">
+             {% endif %}
 
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 

@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Horizon';
+    src: url('Horizon-Regular.eot');
+    src: local('Horizon Regular'), local('Horizon-Regular'),
+        url('Horizon-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Horizon-Regular.woff2') format('woff2'),
+        url('Horizon-Regular.woff') format('woff'),
+        url('Horizon-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

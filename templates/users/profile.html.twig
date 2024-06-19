@@ -1,0 +1,22 @@
+{# templates/users/profile.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil de l'utilisateur{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>Profil de {{ user.username }}</h1>
+        <p>Nom: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>
+            Rôle actuel: {{ user.roles|join(', ') }}  
+            <a href="{{ path('app_user_role', {'id': user.id}) }}">
+                Enlever/Ajouter role admin
+            </a>
+        </p>
+    </div>
+    
+
+    <a href="{{ path('app_users')}}">Retour à la liste des utilisateurs</a>
+
+{% endblock %}

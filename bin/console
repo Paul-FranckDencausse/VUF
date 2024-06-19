@@ -1,21 +1,31 @@
-#!/usr/bin/env php
 <?php
 
+// Utilise la classe Kernel de l'application
 use App\Kernel;
+
+// Utilise la classe Application du bundle FrameworkBundle de Symfony
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 
-if (!is_dir(dirname(__DIR__).'/vendor')) {
+// Vérifie si le répertoire vendor existe
+if (!is_dir(dirname(__DIR__) . '/vendor')) {
+    // Lève une exception si les dépendances sont manquantes
     throw new LogicException('Dependencies are missing. Try running "composer install".');
 }
 
-if (!is_file(dirname(__DIR__).'/vendor/autoload_runtime.php')) {
+// Vérifie si le fichier autoload\_runtime.php existe dans le répertoire vendor
+if (!is_file(dirname(__DIR__) . '/vendor/autoload_runtime.php')) {
+    // Lève une exception si le runtime de Symfony est manquant
     throw new LogicException('Symfony Runtime is missing. Try running "composer require symfony/runtime".');
 }
 
-require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
+// Charge le fichier autoload\_runtime.php de Symfony
+require_once dirname(__DIR__) . '/vendor/autoload_runtime.php';
 
+// Définit une fonction anonyme qui prend un tableau $context en paramètre
 return function (array $context) {
+    // Crée une nouvelle instance de la classe Kernel avec l'environnement et le mode debug définis dans $context
     $kernel = new Kernel($context['APP_ENV'], (bool) $context['APP_DEBUG']);
 
+    // Retourne une nouvelle instance de la classe Application avec le noyau de l'application
     return new Application($kernel);
 };
