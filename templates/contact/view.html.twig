@@ -1,0 +1,66 @@
+{# templates/contact/view.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="w3-container w3-margin-top">
+<br>
+<br>
+    <h1 class="green">Détails du Contact</h1>
+    <div class="w3-card-4">
+        <div class="w3-container">
+            <h2 class="purple">Informations Personnelles</h2>
+        </div>
+        <div class="w3-container w3-padding">
+            <p><strong>Nom:</strong> {{ contact.user.name }}</p>
+            <p><strong>Prénom:</strong> {{ contact.user.userName }}</p>
+            <p><strong>Adresse:</strong> {{ contact.user.adress }}</pat>
+            <p><strong>Email:</strong> {{ contact.user.email }}</p>
+            <p><strong>Numéro de téléphone:</strong> {{ contact.user.phoneNumber }}</p>
+        </div>
+        
+        <div class="w3-container ">
+            <h2 class="purple">Informations Professionnelles</h2>
+        </div>
+        <div class="w3-container w3-padding">
+            <p><strong>Marque:</strong> {{ contact.brand }}</p>
+            <p><strong>Site Web:</strong> {{ contact.website }}</p>
+            <p><strong>Réseaux Sociaux:</strong> {{ contact.socialMedia }}</p>
+        </div>
+
+        <div class="w3-container ">
+            <h2 class="purple">Détails de la Collection</h2>
+        </div>
+        <div class="w3-container w3-padding">
+            <p><strong>Description de la Collection:</strong> {{ contact.collectionDescription }}</p>
+            <p><strong>Date(s) Désirée(s):</strong> {{ contact.desiredDates|date('d/m/Y') }}</p>
+            <p><strong>Concept:</strong> {{ contact.concept }}</p>
+            <p><strong>Nombre de Tenues:</strong> {{ contact.outfitCount }}</p>
+            <p><strong>Exigences Techniques:</strong> {{ contact.technicalRequirements }}</p>
+            <p><strong>Budget:</strong> {{ contact.budget }}</p>
+            <p><strong>Informations Supplémentaires:</strong> {{ contact.additionalInformation }}</p>
+            <p><strong>Consentement:</strong> {{ contact.consent ? 'Oui' : 'Non' }}</p>
+        </div>
+    </div>
+    <br>
+    <a href="{{ path('contact_list') }}" class="w3-button w3-green">Retour à la liste</a>
+</div>
+<div>
+<div class="w3-container">
+    <h2>Commentaires</h2>
+    {% for comment in comments %}
+        <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-container">
+                <h3><b>{{ comment.user.email }}</b></h3>
+                <p>{{ comment.textarea }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<div>
+    {{  form_start(form)}}
+    {{  form_row(form.textarea) }}
+    <button type="submit"> Envoyer commentaire</button>
+    {{ form_end(form) }}
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<div class="w3-container w3-margin-top">
+    <nav class="w3-container w3-margin-top">
+        <ul class="w3-container w3-margin-top">
+            <li><a href="{{ path('app_users')}}" class="w3-bar-item w3-button">Gestion utilisateurs</a></li>
+            <li><a href="{{ path('contact_list')}}" class="w3-bar-item w3-button">Gestion contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+
+{% endblock %}

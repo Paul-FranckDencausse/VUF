@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Hello LegalController!
+{% endblock %}
+
+{% block body %}
+    <div class="w3-display-middle w3-center">
+        <h1 class="green">
+            Bienvenue sur la page des informations légales
+        </h1>
+
+        <p>
+            Veuillez trouver ci-dessous les liens vers nos différentes pages d'informations légales :
+        </p>
+
+        <ul class="w3-left">
+            <li>
+                <a href="{{ path('app_cgu') }}">
+                    CGU
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ path('app_cgv') }}">
+                    CGV
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ path('app_rgpd') }}">
+                    RGPD
+                </a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

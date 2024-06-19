@@ -1,0 +1,4 @@
+{
+    "git.ignoreLimitWarning": true
+}
+//configure VS code pour ignorer les avertissements de limite de Git

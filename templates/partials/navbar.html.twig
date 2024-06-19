@@ -1,19 +1,17 @@
 
-<style>
-*{
-    background-color:#23272a ;
-}
-</style>
  <body>
     <!-- Navbar -->
-    <div class="w3-top">
+    <div class="w3-top w3-dark-gray">
         <div class="w3-bar w3-card">
             <!-- Left-aligned menu for large screens -->
             <div class="w3-hide-small w3-left">
-                <a href="{{ path('app_home') }}" class="w3-bar-item w3-button">Accueil</a>
-                <a href="{{ path('app_catwalks') }}" class="w3-bar-item w3-button">Défilés</a>
-                <a href="{{ path('app_team') }}" class="w3-bar-item w3-button">Equipe</a>
-                <a href="{{ path('app_contact') }}" class="w3-bar-item w3-button">Contact</a>
+                
+                <a href="{{ path('app_catwalks') }}" class="w3-bar-item fa fa-camera green w3-button">Défilés</a>
+                <a href="{{ path('app_team') }}" class="w3-bar-item fa fa-group green w3-button">Equipe</a>
+              <a href="{{ path('contact') }}"class="w3-bar-item fa fa-envelope green w3-button">Contact</a>
+              {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('app_admin')}}" class="w3-bar-item w3-button">Pannel administrateur</a>
+            {% endif %}
             </div>
 
             <!-- Hamburger menu for small screens -->
@@ -23,29 +21,42 @@
                     <a href="{{ path('app_home') }}" class="w3-bar-item w3-button">Accueil</a>
                     <a href="{{ path('app_catwalks') }}" class="w3-bar-item w3-button">Défilés</a>
                     <a href="{{ path('app_team') }}" class="w3-bar-item w3-button">Equipe</a>
-                    <a href="{{ path('app_contact') }}" class="w3-bar-item w3-button">Contact</a>
+                   <a href="{{ path('contact') }}" class="w3-bar-item w3-button">Contact</a>
+                   {% if is_granted('ROLE_ADMIN') %}
+                   <a href="{{ path('app_admin')}}" class="w3-bar-item w3-button">Pannel administrateur</a>
+                   {% endif %}
                 </div>
             </div>
-
+            
             <!-- Centered slogan and logo -->
-            <div class="w3-bar-item center-slogan">
-                <img src="{{ asset('build/images/logo_vert.png') }}" alt="logo" class="logo">
-                <span>Dessiné par l'IA, porté avec audace.</span>
+            <div class="w3-bar-item w3-card w3-display-middle">
+              <a href="{{ path('app_home') }}" class="w3-bar-item  w3-button"> 
+              <img src="{{ asset('build/images/logo_vert.png') }}" alt="logo" class="logo w3-center">
+                </a>
+    
             </div>
 
             <!-- Right-aligned login icon -->
-            <a href="{{ path('app_login') }}" class="w3-bar-item w3-button w3-right">
-                <i class="fa fa-key green"></i>
-            </a>
+            <div>
+                {% if app.user %}
+                    <a href="{{ path('app_logout') }}" class="w3-bar-item w3-button w3-right">
+                        <i class="fa fa-sign-out green">Déconnexion</i>
+                    </a>
+                {% else %}
+                    <a href="{{ path('app_login') }}" class="w3-bar-item w3-button w3-right">
+                        <i class="fa fa-key green">Connexion</i>
+                    </a>
+                {% endif %}
+            </div>
         </div>
     </div>
 
-    <!-- Small screen navbar (optional if you want a different layout for small screens) -->
-    <div id="navDemo" class="w3-bar-block w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+    <!-- Small screen navbar  -->
+    <div id="navDemo" class="w3-bar-block w3-mobile w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
         <a href="{{ path('app_home') }}" class="w3-bar-item w3-button" onclick="myFunction()">Accueil</a>
         <a href="{{ path('app_catwalks') }}" class="w3-bar-item w3-button" onclick="myFunction()">Défilés</a>
         <a href="{{ path('app_team') }}" class="w3-bar-item w3-button" onclick="myFunction()">Equipe</a>
-        <a href="{{ path('app_contact') }}" class="w3-bar-item w3-button" onclick="myFunction()">Contact</a>
+        <a href="{{ path('contact') }}"class="w3-bar-item w3-button" onclick="myFunction()">Contact</a>
     </div>
     <script>
 function myFunction() {

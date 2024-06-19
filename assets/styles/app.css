@@ -1,27 +1,41 @@
 /* style.css */
-*{
-    color: #e6e6e6;
-    background-color: #2c2f33 ;
-    font-family: 'Permanent Marker', cursive;
-  }
-  
-  
-  .green{
-    color: #50F609;
-  }
-  .vert{
-    background-color: #50F609;
-  }
-  
-  .purple{
-    color: #9C09F6;
-  }
-  .violet{
-    background-color: #9C09F6;
-  }
-  .footer-column {
- 
-    padding: 20px;
+
+/* La règle suivante s'applique à tous les éléments de la page */
+
+* {
+  color: #e6e6e6; /* Définit la couleur du texte en #e6e6e6 (gris clair) */
+ /* Définit la couleur d'arrière-plan en rouge et utilise !important pour remplacer toute autre règle CSS avec une spécificité plus élevée */
+  font-family: 'Permanent Marker', cursive; /* Définit la police d'écriture en 'Permanent Marker' avec une police cursive comme police de secours */
+}
+
+/* La règle suivante s'applique à tous les éléments avec la classe "green" */
+
+.green {
+  color: #50F609; /* Définit la couleur du texte en #50F609 (vert clair) */
+}
+
+/* La règle suivante s'applique à tous les éléments avec la classe "vert" */
+
+.vert {
+  background-color: #50F609; /* Définit la couleur d'arrière-plan en #50F609 (vert clair) */
+}
+
+/* La règle suivante s'applique à tous les éléments avec la classe "purple" */
+
+.purple {
+  color: #9C09F6; /* Définit la couleur du texte en #9C09F6 (violet foncé) */
+}
+
+/* La règle suivante s'applique à tous les éléments avec la classe "violet" */
+
+.violet {
+  background-color: #9C09F6; /* Définit la couleur d'arrière-plan en #9C09F6 (violet foncé) */
+}
+
+/* La règle suivante s'applique à tous les éléments avec la classe "footer-column" */
+
+.footer-column {
+  padding: 20px; /* Définit un remplissage interne de 20px sur tous les côtés de l'élément */
 }
 .w3-hover-opacity.green:hover {
     opacity: 0.6;
@@ -41,6 +55,7 @@ footer {
   list-style-type: none;
   justify-content: space-around;
   padding: 0;
+  background-color: #23272a ;
 
 }
 /* styles.css */
@@ -49,5 +64,5 @@ a {
 }
 
 footer a {
-  text-decoration: none;
+  text-decoration: none !important ;
 }

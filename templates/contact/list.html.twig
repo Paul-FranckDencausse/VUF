@@ -1,0 +1,41 @@
+{# templates/contact/list.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="w3-container w3-margin-top">
+<br>
+<br>
+<br>
+    <h2 class="green">Liste des Contacts</h2>
+    <table class="w3-table-all w3-hoverable">
+        <thead>
+            <tr class="w3-light-grey">
+                <th>
+                    <a href="{{ path('contact_list', {'sort': 'name', 'direction': 'ASC'}) }}">Nom ↑</a>
+                    <a href="{{ path('contact_list', {'sort': 'name', 'direction': 'DESC'}) }}">↓</a>
+                </th>
+                <th>
+                    <a href="{{ path('contact_list', {'sort': 'email', 'direction': 'ASC'}) }}">Email ↑</a>
+                    <a href="{{ path('contact_list', {'sort': 'email', 'direction': 'DESC'}) }}">↓</a>
+                </th>
+                <th>Date</th>
+                <th>Action</th> <!-- Colonne pour les actions -->
+            </tr>
+        </thead>
+        <tbody>
+        {# cf. La requête DQL "findByDates()" dans ContactRepository et le contrôleur AdminController #}
+            {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.desiredDates|date('d-m-Y') }}
+                <td>
+                    <a href="{{ path('contact_view', {'id': contact.id}) }}" class="w3-button w3-green">Voir Détails</a>
+                </ix
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -7,34 +7,124 @@
 {% endblock %}
 
 {% block body %}
+<div >
 
-      <h1 class="green">Bienvenue sur le site de Virtual Urban Flow!</h1>4
+
+     
     <div class="w3-content" style="max-width:2000px;margin-top:46px">
+     <h1 class="green w3-center">VUF , le buzz entre vos mains!</h1>
         <!-- Content and slides go here -->
         <!-- Dynamic slide show -->
   
         {% include 'partials/slideshow.html.twig' %}
 </div>
-<h2 class="green w3-center">Il nous ont fait confiance:</h2>
-<div class="w3-row-padding w3-main-content  w3-grayscale">
-    <div class="w3-col s3">
-        <img src="{{ asset('build/images/triangle.jpg') }}" alt="Logo 1" style="width:100%">
-        <p>Triangle</p>
+
+  <div class="w3-card w3-content w3-center w3-padding-64 w3-dark-gray"  id="team">
+   <h2 class="w3-wide green">Notre équipe</h2>
+    <p class="w3-opacity purple">Le streetwear notre passion</p>
+    <p class="w3-justify">Bienvenue sur le site de Virtual Urban Flow, une entreprise innovante qui révolutionne le monde de la mode streetwear en utilisant l'IA générative pour créer des défilés de mode uniques et avant-gardistes. Notre équipe dynamique et passionnée est composée de Solène, Emma, Paul-Franck, Lydie, et Marième, qui travaillent ensemble pour repousser les limites de la créativité et de l'innovation. </p>
+   <img src="{{ asset('build/images/group.jpeg') }}" class="w3-round w3-margin-bottom" alt="groupe" style="width:60%">
+  
     </div>
-    <div class="w3-col s3">
-        <img src="{{ asset('build/images/sadida.jpg') }}" alt="Logo 2" style="width:100%">
-        <p>Sadida</p>
+  </div>
+<!-- Nos défilés -->
+<div class="w3-card w3-dark-gray">
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+    <h2 class="w3-wide green w3-center">Nos partenaires</h2>
+    <p class="w3-opacity purple w3-center">Ils nous ont fait confiance</p><br>
+
+    <div class="w3-row-padding w3-padding-32" style="margin:0 -16px; display: flex; align-items: center;"> <!-- Ajout de la propriété CSS "display: flex; align-items: center;" -->
+      <div class="w3-third w3-margin-bottom">
+        <img src="{{ asset('build/images/triangle.jpg') }}" alt="triangle" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container ">
+          <p class="green">Sadida</p>
+          <p class="w3-opacity purple">Impossible is not French</p>
+          <p>Sadida est une marque  de vêtements de sport, connue pour allier performance et style avec des produits innovants et accessibles.</p>
+          <br>
+          <div class="w3-center">
+            <button class="w3-button  green w3-margin-bottom"
+              onclick="document.getElementById('ticketModal').style.display='block'">
+              Tickets
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-third w3-margin-bottom">
+        <img src="{{ asset('build/images/cougar.jpg') }}" alt="Cougar" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container ">
+          <p class="green">Cougar</p>
+          <p class="w3-opacity purple">Unleash your wild side</p>
+          <p>Cougar est une marque  spécialisée dans les équipements sportifs haut de gamme, offrant des produits durables et conçus pour les athlètes exigeants.</p>
+          <div class="w3-center">
+            <button class="w3-button green  w3-margin-bottom"
+              onclick="document.getElementById('ticketModal').style.display='block'">
+              Tickets
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-third w3-margin-bottom">
+        <img src="{{ asset('build/images/pallas.jpg') }}" alt="Pallas" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container ">
+          <p class="green">Pallas</p>
+          <p class="w3-opacity purple">Just do it</p>
+          <p>Pallas est une marque  de vêtements de sport qui se concentre sur l'élégance , proposant des tenues  pour le sport et le quotidien.</p>
+          <br>
+          <div class="w3-center">
+            <button class="w3-button green w3-margin-bottom"
+              onclick="document.getElementById('ticketModal').style.display='block'">
+              Tickets
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="w3-col s3">
-        <img src="{{ asset('build/images/cougar.jpg') }}" alt="Logo 3" style="width:100%">
-        <p>Cougar</p>
+  </div>
+</div>
+
+
+
+<div class="w3-content w3-card w3-center w3-dark-gray" style="max-width:2000px;margin-top:46px">
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <h2 class="w3-wide green w3-center">CONTACT</h2>
+    <p class="w3-opacity purple w3-center">N'hésitez pas!</p>
+    <div class="w3-row w3-padding-32">
+
+      <div class="w3-col m6 w3-large w3-margin-bottom w3-left-align"> <!-- Ajout de la classe CSS "w3-left-align" -->
+        <a href="https://www.google.com/maps/search/?api=1&query={{ location|url_encode }}" class="w3-button">
+          <i class="fa fa-map-marker green" style="width:30px"></i> {{ location|default('Your Location') }}
+        </a><br>
+        <a href="tel:{{ phone }}"class="w3-button">
+          <i class="fa fa-phone green" style="width:30px"></i> {{ phone|default('+0000000000') }}
+        </a><br>
+        <a href="mailto:{{ email }}" class="w3-button">
+          <i class="fa fa-envelope green" style="width:30px"></i> {{ email|default('info@example.com') }}
+        </a><br>
+      </div>
+
     </div>
-    <div class="w3-col s3">
-        <img src="{{ asset('build/images/pallas.jpg') }}" alt="Logo 4" style="width:100%">
-        <p>Pallas</p>
+  </div>
+</div>
+<!-- Cookie Consent Modal using W3.CSS -->
+<div id="cookieConsentModal" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+        <header class="w3-container w3-teal"> 
+            <span onclick="document.getElementById('cookieConsentModal').style.display='none'" 
+            class="w3-button w3-display-topright">&times;</span>
+            <h2>Consentement aux cookies</h2>
+        </header>
+        <div class="w3-container">
+            <p>Nous utilisons des cookies pour améliorer votre expérience sur notre site. En continuant à utiliser notre site, vous acceptez notre utilisation des cookies.</p>
+            <p>
+                <button class="w1-button w3-block w3-green w3-section w3-padding" onclick="acceptCookies()">Accepter</button>
+            </p>
+        </div>
     </div>
 </div>
 
+</div>
 
 
     <script src="{{ asset('build/main.js') }}"></script>
